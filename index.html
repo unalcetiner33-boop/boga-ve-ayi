@@ -95,7 +95,8 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure{display:no
 .model .n{font-family:'Barlow Semi Condensed',system-ui,sans-serif;font-size:52px;font-weight:800;line-height:.9;min-width:34px}
 .model h3{font-size:22px;margin-bottom:2px}
 .price{display:grid;gap:10px}
-.price .card{display:grid;gap:4px}
+.price .card{display:grid;gap:4px;align-content:start}
+.price .p{white-space:nowrap}
 .price .p{font-family:'Barlow Semi Condensed',system-ui,sans-serif;font-size:26px;font-weight:800;color:var(--gold)}
 ul.dots{padding-left:20px;margin-top:6px}ul.dots li{margin:4px 0}
 /* steps */
@@ -126,12 +127,12 @@ footer{padding:0 0 40px;text-align:center;color:var(--muted);font-size:13px}
   .hero .wrap{display:grid;grid-template-columns:1fr 1.1fr;grid-template-areas:"brand brand" "chars text";column-gap:56px;align-items:center}
   .brand{grid-area:brand;margin-bottom:18px}
   .brand img{width:120px}
-  .hero .chars{grid-area:chars;height:470px;margin:0}
-  .htext{grid-area:text}
-  .hero h1{font-size:80px;white-space:nowrap}
+  .hero .chars{grid-area:chars;height:min(470px,34vw);margin:0;min-width:0}
+  .htext{grid-area:text;min-width:0}
+  .hero h1{font-size:clamp(52px,6.3vw,80px);white-space:nowrap}
   .hero .sub{font-size:28px}
   .hero p.lead{font-size:21px;max-width:30em}
-  .nav{flex-wrap:nowrap;gap:10px;margin-top:26px}
+  .nav{flex-wrap:wrap;gap:10px;margin-top:26px}
   .nav a{flex:0 0 auto;font-size:15px;padding:10px 18px}
   .nav a:hover,.tabs button:hover{background:var(--gold);color:var(--deep)}
   .stats{grid-template-columns:repeat(3,1fr)}
@@ -150,9 +151,9 @@ footer{padding:0 0 40px;text-align:center;color:var(--muted);font-size:13px}
   .topics{grid-template-columns:repeat(4,1fr);gap:12px}
   .topics div{padding:18px}
   #modeller .rows{grid-template-columns:1fr 1fr}
-  .price{grid-template-columns:1fr 1fr;gap:16px}
+  .price{grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
   .price .card:last-child{grid-column:1/-1}
-  .price .p{font-size:32px}
+  .price .p{font-size:28px;margin-top:6px}
   .steps{grid-template-columns:repeat(5,1fr);gap:18px}
   .step{flex-direction:column;padding-bottom:0}
   .step:not(:last-child):after{left:52px;right:-14px;top:21px;bottom:auto;width:auto;height:2px}
@@ -162,7 +163,8 @@ footer{padding:0 0 40px;text-align:center;color:var(--muted);font-size:13px}
   .maker img{width:200px}
   .maker{--gap:64px}
 }
-@media (min-width:1300px){ .hero .chars{height:520px} }
+@media (min-width:1300px){ .hero .chars{height:min(520px,36vw)} }
+@media (min-width:1100px){ .nav{flex-wrap:nowrap} }
 </style>
 </head>
 <body>
@@ -285,10 +287,11 @@ footer{padding:0 0 40px;text-align:center;color:var(--muted);font-size:13px}
 
 <section id="fiyatlar"><div class="wrap">
   <div class="kicker">Bütçe</div>
-  <h2>Bölüm başı 20.000&nbsp;TL</h2>
+  <h2>Bölüm başı 50.000&nbsp;TL</h2>
   <div class="price">
-    <div class="card"><h3>İstediğiniz sayıda içerik</h3><span class="muted">Yeni konu, iki format, kurum logosu</span><span class="p">20.000 TL / bölüm</span></div>
-    <div class="card"><h3>12 bölümlük sezon</h3><span class="muted">12 bölüm, ayda bir bölüm, aylık ödeme</span><span class="p">240.000 TL / sezon</span></div>
+    <div class="card"><h3>Lansman fiyatı</h3><span class="muted">İlk iş birliğine özel, ilk 2 bölüm</span><span class="p">20.000 TL / bölüm</span></div>
+    <div class="card"><h3>İstediğiniz sayıda içerik</h3><span class="muted">Yeni konu, iki format, kurum logosu</span><span class="p">50.000 TL / bölüm</span></div>
+    <div class="card"><h3>12 bölümlük sezon</h3><span class="muted">Ayda bir bölüm, aylık ödeme; bölüm başı 40.000 TL (%20 indirim)</span><span class="p">480.000 TL / sezon</span></div>
     <div class="card"><h3 class="teal">Ek kalemler</h3>
       <ul class="dots"><li>Sektör tekeli: ayrıca</li><li>Ek revizyon ve acil teslim: ayrıca</li><li>TV yayın hakkı: ayrı lisans</li></ul>
       <p class="muted small" style="margin-top:6px"><i>Fiyatlar üç ayda bir güncellenir ya da dolara endekslenir.</i></p></div>
