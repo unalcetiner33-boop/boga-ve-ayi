@@ -107,6 +107,10 @@ ul.dots{padding-left:20px;margin-top:6px}ul.dots li{margin:4px 0}
 .close .duo2{display:flex;justify-content:center;gap:0;align-items:flex-end;margin-top:20px}
 .close .duo2 img{width:48%;height:auto}
 .contact{display:grid;gap:8px;margin:18px 0}
+.share{display:flex;gap:8px;justify-content:center;margin-top:16px;flex-wrap:wrap}
+.share button{font:700 15px "Nunito Sans",system-ui,sans-serif;border:0;border-radius:99px;padding:11px 18px;cursor:pointer}
+.share .sh{background:var(--gold);color:var(--deep)}
+.share .cp{background:var(--card);color:var(--cream)}
 .contact a{display:block;background:var(--card);border-radius:12px;padding:14px;color:var(--cream);text-decoration:none;font-weight:700}
 .contact a small{display:block;font-weight:400;color:var(--muted);font-size:13px}
 footer{padding:0 0 40px;text-align:center;color:var(--muted);font-size:13px}
@@ -319,6 +323,7 @@ footer{padding:0 0 40px;text-align:center;color:var(--muted);font-size:13px}
 <section id="iletisim" class="close"><div class="wrap">
   <h2 style="font-size:42px">Birlikte anlatalım</h2>
   <p class="sub" style="color:var(--gold);font-style:italic;font-size:20px">Boğanın cesareti, ayının temkini.</p>
+  <div class="share"><button class="sh" type="button">Bu sayfayı paylaş</button><button class="cp" type="button">Linki kopyala</button></div>
   <div class="contact">
     <div class="card"><b class="gold" style="font-size:20px">Ünal Çetiner</b></div>
     <a class="cx" data-k="m" data-v="bW9jLmxpYW1nQDMzcmVuaXRlY2xhbnU=" href="#iletisim"><span>E-posta adresini göster</span><small>E-posta</small></a>
@@ -362,6 +367,22 @@ players.forEach(function(p){
     var txt=dec(a.getAttribute('data-v')), k=a.getAttribute('data-k');
     a.querySelector('span').textContent=txt;
     a.setAttribute('href', k==='m' ? 'mai'+'lto:'+txt : 'te'+'l:'+dec(a.getAttribute('data-h')));
+  });
+})();
+// paylaş / kopyala: telefonda paylaşım menüsü, bilgisayarda panoya kopyalama
+(function(){
+  var URL='https://tinyurl.com/boga-ve-ayi', T='Boğa ve Ayı — Kurumsal Sunum';
+  var sh=document.querySelector('.share .sh'), cp=document.querySelector('.share .cp');
+  function flash(btn,txt){ var o=btn.textContent; btn.textContent=txt; setTimeout(function(){ btn.textContent=o; },1800); }
+  function copy(btn){
+    function ok(){ flash(btn,'Kopyalandı ✓'); }
+    if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(URL).then(ok,fallback); } else fallback();
+    function fallback(){ var t=document.createElement('textarea'); t.value=URL; t.style.position='fixed'; t.style.opacity='0'; document.body.appendChild(t); t.select(); try{ document.execCommand('copy'); ok(); }catch(_){ prompt('Linki kopyalayın:',URL); } document.body.removeChild(t); }
+  }
+  cp.addEventListener('click',function(){ copy(cp); });
+  sh.addEventListener('click',function(){
+    if(navigator.share){ navigator.share({title:T,text:'Finansal okuryazarlık için kısa animasyon serisi: Boğa ve Ayı',url:URL}).catch(function(){}); }
+    else copy(sh);
   });
 })();
 </script>
