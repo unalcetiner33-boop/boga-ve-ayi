@@ -67,6 +67,9 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure{display:no
 .player .bar svg{width:18px;height:18px;fill:var(--cream)}
 .player .prog{flex:1;height:6px;border-radius:3px;background:var(--card);position:relative;touch-action:none}
 .player .prog i{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:3px;background:var(--gold)}
+.player:fullscreen,.player:-webkit-full-screen{background:#000;display:flex;flex-direction:column;justify-content:center;padding:0 16px 16px;box-sizing:border-box}
+.player:fullscreen video,.player:-webkit-full-screen video{flex:1;min-height:0;width:100%;height:100%;object-fit:contain;border-radius:0}
+.player:fullscreen .pp,.player:-webkit-full-screen .pp{width:96px;height:96px}
 .brand{display:flex;justify-content:center;margin-bottom:4px}
 .brand img{width:92px;height:auto;opacity:.95}
 .maker{margin-top:var(--gap,48px);margin-bottom:calc(var(--gap,48px) - 4px);display:flex;flex-direction:column;align-items:center;text-align:center}
@@ -230,23 +233,23 @@ footer{padding:0 0 40px;text-align:center;color:var(--muted);font-size:13px}
   <h2>Hazır iki bölüm · Tam versiyon</h2>
   <h3 class="eptitle">Bölüm 1 · Tosun ile Boz tanışıyor</h3>
   <div class="ep" data-ep>
-    <div class="v916 player" data-player><video playsinline webkit-playsinline preload="metadata" poster="bolum1_9x16.jpg" src="bolum1_9x16.mp4" disablepictureinpicture disableremoteplayback x-webkit-airplay="deny" controlslist="nodownload nofullscreen noremoteplayback noplaybackrate"></video><button class="pp" aria-label="Oynat"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></button><div class="bar"><button class="tg" aria-label="Oynat veya durdur"></button><div class="prog" aria-hidden="true"><i></i></div><button class="mu" aria-label="Sesi aç veya kapat"></button></div></div>
+    <div class="v916 player" data-player><video playsinline webkit-playsinline preload="metadata" poster="bolum1_9x16.jpg?v=4" src="bolum1_9x16.mp4?v=4" disablepictureinpicture disableremoteplayback x-webkit-airplay="deny" controlslist="nodownload noremoteplayback noplaybackrate"></video><button class="pp" aria-label="Oynat"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></button><div class="bar"><button class="tg" aria-label="Oynat veya durdur"></button><div class="prog" aria-hidden="true"><i></i></div><button class="mu" aria-label="Sesi aç veya kapat"></button><button class="fs" aria-label="Tam ekran"></button></div></div>
     <h3 class="gold">Dikey · 9:16</h3>
     <p>Piyasa çöker, mum yağmuru başlar. Boz şemsiyesini açar: “Yağmuru bekliyordum.” Reels ve Shorts için.</p>
   </div>
   <div class="ep" data-ep>
-    <div class="v169 player" data-player><video playsinline webkit-playsinline preload="metadata" poster="bolum1_16x9.jpg" src="bolum1_16x9.mp4" disablepictureinpicture disableremoteplayback x-webkit-airplay="deny" controlslist="nodownload nofullscreen noremoteplayback noplaybackrate"></video><button class="pp" aria-label="Oynat"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></button><div class="bar"><button class="tg" aria-label="Oynat veya durdur"></button><div class="prog" aria-hidden="true"><i></i></div><button class="mu" aria-label="Sesi aç veya kapat"></button></div></div>
+    <div class="v169 player" data-player><video playsinline webkit-playsinline preload="metadata" poster="bolum1_16x9.jpg?v=4" src="bolum1_16x9.mp4?v=4" disablepictureinpicture disableremoteplayback x-webkit-airplay="deny" controlslist="nodownload noremoteplayback noplaybackrate"></video><button class="pp" aria-label="Oynat"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></button><div class="bar"><button class="tg" aria-label="Oynat veya durdur"></button><div class="prog" aria-hidden="true"><i></i></div><button class="mu" aria-label="Sesi aç veya kapat"></button><button class="fs" aria-label="Tam ekran"></button></div></div>
     <h3 class="teal">Yatay · 16:9</h3>
     <p>Aynı bölümün yatay sürümü. YouTube, web sitesi ve sunumlar için.</p>
   </div>
   <h3 class="eptitle">Bölüm 2 · Yastık altındaki 100 lira</h3>
   <div class="ep" data-ep>
-    <div class="v916 player" data-player><video playsinline webkit-playsinline preload="metadata" poster="bolum2_9x16.jpg" src="bolum2_9x16.mp4" disablepictureinpicture disableremoteplayback x-webkit-airplay="deny" controlslist="nodownload nofullscreen noremoteplayback noplaybackrate"></video><button class="pp" aria-label="Oynat"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></button><div class="bar"><button class="tg" aria-label="Oynat veya durdur"></button><div class="prog" aria-hidden="true"><i></i></div><button class="mu" aria-label="Sesi aç veya kapat"></button></div></div>
+    <div class="v916 player" data-player><video playsinline webkit-playsinline preload="metadata" poster="bolum2_9x16.jpg?v=4" src="bolum2_9x16.mp4?v=4" disablepictureinpicture disableremoteplayback x-webkit-airplay="deny" controlslist="nodownload noremoteplayback noplaybackrate"></video><button class="pp" aria-label="Oynat"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></button><div class="bar"><button class="tg" aria-label="Oynat veya durdur"></button><div class="prog" aria-hidden="true"><i></i></div><button class="mu" aria-label="Sesi aç veya kapat"></button><button class="fs" aria-label="Tam ekran"></button></div></div>
     <h3 class="gold">Dikey · 9:16</h3>
     <p>Bir yılda alım gücü erir: 100 TL ile 10 çay yerine 7,7 çay. TÜİK verisiyle. Reels ve Shorts için.</p>
   </div>
   <div class="ep" data-ep>
-    <div class="v169 player" data-player><video playsinline webkit-playsinline preload="metadata" poster="bolum2_16x9.jpg" src="bolum2_16x9.mp4" disablepictureinpicture disableremoteplayback x-webkit-airplay="deny" controlslist="nodownload nofullscreen noremoteplayback noplaybackrate"></video><button class="pp" aria-label="Oynat"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></button><div class="bar"><button class="tg" aria-label="Oynat veya durdur"></button><div class="prog" aria-hidden="true"><i></i></div><button class="mu" aria-label="Sesi aç veya kapat"></button></div></div>
+    <div class="v169 player" data-player><video playsinline webkit-playsinline preload="metadata" poster="bolum2_16x9.jpg?v=4" src="bolum2_16x9.mp4?v=4" disablepictureinpicture disableremoteplayback x-webkit-airplay="deny" controlslist="nodownload noremoteplayback noplaybackrate"></video><button class="pp" aria-label="Oynat"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></button><div class="bar"><button class="tg" aria-label="Oynat veya durdur"></button><div class="prog" aria-hidden="true"><i></i></div><button class="mu" aria-label="Sesi aç veya kapat"></button><button class="fs" aria-label="Tam ekran"></button></div></div>
     <h3 class="teal">Yatay · 16:9</h3>
     <p>Aynı bölümün yatay sürümü. YouTube, web sitesi ve sunumlar için.</p>
   </div>
@@ -358,26 +361,34 @@ footer{padding:0 0 40px;text-align:center;color:var(--muted);font-size:13px}
 var IC={play:'<svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg>',
 pause:'<svg viewBox="0 0 24 24"><path d="M6.5 4.5h4v15h-4zM13.5 4.5h4v15h-4z"/></svg>',
 on:'<svg viewBox="0 0 24 24"><path d="M3 9.5h4l5-4v13l-5-4H3zM15.5 8.5a5 5 0 0 1 0 7M18 6a8.5 8.5 0 0 1 0 12" stroke="currentColor" stroke-width="2" fill="none"/><path d="M3 9.5h4l5-4v13l-5-4H3z"/></svg>',
-off:'<svg viewBox="0 0 24 24"><path d="M3 9.5h4l5-4v13l-5-4H3z"/><path d="M16 9l5 6M21 9l-5 6" stroke="currentColor" stroke-width="2"/></svg>'};
+off:'<svg viewBox="0 0 24 24"><path d="M3 9.5h4l5-4v13l-5-4H3z"/><path d="M16 9l5 6M21 9l-5 6" stroke="currentColor" stroke-width="2"/></svg>',
+fs:'<svg viewBox="0 0 24 24"><path d="M3 9V3h6M15 3h6v6M21 15v6h-6M9 21H3v-6" stroke="currentColor" stroke-width="2.4" fill="none"/></svg>',
+fsx:'<svg viewBox="0 0 24 24"><path d="M9 3v6H3M21 9h-6V3M15 21v-6h6M3 15h6v6" stroke="currentColor" stroke-width="2.4" fill="none"/></svg>'};
+function fsEl(){ return document.fullscreenElement||document.webkitFullscreenElement; }
 var players=[].slice.call(document.querySelectorAll('[data-player]'));
 players.forEach(function(p){
-  var v=p.querySelector('video'), tg=p.querySelector('.tg'), mu=p.querySelector('.mu'), pr=p.querySelector('.prog'), bar=pr.querySelector('i');
-  mu.style.color='var(--cream)';
-  function ui(){ tg.innerHTML=v.paused?IC.play:IC.pause; mu.innerHTML=v.muted?IC.off:IC.on; p.classList.toggle('playing',!v.paused); }
+  var v=p.querySelector('video'), tg=p.querySelector('.tg'), mu=p.querySelector('.mu'), fs=p.querySelector('.fs'), pr=p.querySelector('.prog'), bar=pr.querySelector('i');
+  mu.style.color='var(--cream)'; fs.style.color='var(--cream)';
+  function ui(){ tg.innerHTML=v.paused?IC.play:IC.pause; mu.innerHTML=v.muted?IC.off:IC.on; fs.innerHTML=fsEl()===p?IC.fsx:IC.fs; p.classList.toggle('playing',!v.paused); }
   function toggle(){ if(v.paused){ players.forEach(function(o){ if(o!==p) o.querySelector('video').pause(); }); v.play(); } else v.pause(); }
   v.addEventListener('click',toggle); p.querySelector('.pp').addEventListener('click',toggle); tg.addEventListener('click',toggle);
   mu.addEventListener('click',function(){ v.muted=!v.muted; ui(); });
   ['play','pause','ended','volumechange'].forEach(function(e){ v.addEventListener(e,ui); });
   v.addEventListener('timeupdate',function(){ bar.style.width=(v.duration?100*v.currentTime/v.duration:0)+'%'; });
   pr.addEventListener('pointerdown',function(e){ var r=pr.getBoundingClientRect(); if(v.duration) v.currentTime=Math.max(0,Math.min(1,(e.clientX-r.left)/r.width))*v.duration; });
-  // tam ekran, indirme ve sağ tık menüsü kapalı
+  // tam ekran: oynatıcının tamamı (kendi düğmeleriyle) tam ekrana geçer; iPhone'da sistem oynatıcısı açılır
+  function fullscreen(){
+    if(fsEl()===p){ (document.exitFullscreen||document.webkitExitFullscreen).call(document); return; }
+    var req=p.requestFullscreen||p.webkitRequestFullscreen;
+    if(req){ var r=req.call(p); if(r&&r.catch) r.catch(function(){ if(v.webkitEnterFullscreen) v.webkitEnterFullscreen(); }); }
+    else if(v.webkitEnterFullscreen){ v.webkitEnterFullscreen(); }
+  }
+  fs.addEventListener('click',fullscreen);
+  v.addEventListener('dblclick',function(e){ e.preventDefault(); fullscreen(); });
+  ['fullscreenchange','webkitfullscreenchange'].forEach(function(e){ document.addEventListener(e,ui); });
+  // indirme ve sağ tık menüsü kapalı
   v.addEventListener('contextmenu',function(e){ e.preventDefault(); });
-  v.addEventListener('dblclick',function(e){ e.preventDefault(); });
-  v.addEventListener('webkitbeginfullscreen',function(){ try{ v.webkitExitFullscreen(); }catch(_){} });
   ui();
-});
-['fullscreenchange','webkitfullscreenchange'].forEach(function(e){
-  document.addEventListener(e,function(){ var f=document.fullscreenElement||document.webkitFullscreenElement; if(f){ (document.exitFullscreen||document.webkitExitFullscreen).call(document); } });
 });
 // iletişim bilgileri sayfada açık metin olarak durmaz; tarayıcıda çözülür (botlara karşı)
 (function(){
